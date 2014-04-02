@@ -12,7 +12,7 @@ i = 1
 triangle = 1
 while true
   triangle = triangle_number(i)
-  divisors = Prime.prime?(triangle) ? 2 : number_of_divisors(triangle) 
+  divisors = number_of_divisors(triangle) 
   break if divisors > ARGV.first.to_i
   i += 1
 end
