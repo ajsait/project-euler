@@ -4,15 +4,14 @@ class Integer
   end
 end
 
-three_digit_numbers = (100..999)
-result = three_digit_numbers.map do |x| 
-          products = three_digit_numbers.map do |e| 
-                      e * x 
-                    end
-          palindromes = products.select {|num| num.palindrome?}
-          palindromes.empty? ? 0 : palindromes.max
-        end
+max = 0
 
-puts result.max
+999.downto(100) do |i|
+  i.downto(100) do |j|
+    result = i * j
+    max = result if result > max && result.palindrome?
+    break if result <= max
+  end
+end
 
-
+puts max
