@@ -1,0 +1,1 @@
+puts 1.upto(1000).inject(0) {|result, x| result + x**x}.to_s.split(//)[-10,10].join
